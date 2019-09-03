@@ -1,0 +1,115 @@
+{
+    "name": "Redemption",
+    "fields": [
+        {
+            "fieldName": "redemptionId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "redemptionCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "redemptionDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "customerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "unitSellPriceInd",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellUnit",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellLot",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellBasket",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "market",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sellGrossAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fee",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "sellNetAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "statusCash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusEtf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "channel",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dealerId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "underlyingId",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190903085310",
+    "entityTableName": "redemption",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
