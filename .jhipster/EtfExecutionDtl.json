@@ -1,0 +1,31 @@
+{
+    "name": "EtfExecutionDtl",
+    "fields": [
+        {
+            "fieldName": "basketOrderId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "transactionId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "transactionType",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190903085312",
+    "entityTableName": "etf_execution_dtl",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

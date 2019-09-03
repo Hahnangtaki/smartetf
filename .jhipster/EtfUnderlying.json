@@ -1,0 +1,32 @@
+{
+    "name": "EtfUnderlying",
+    "fields": [
+        {
+            "fieldName": "underlyingId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190903085306",
+    "entityTableName": "etf_underlying",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
