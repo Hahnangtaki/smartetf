@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Redemption.
+    -->
+    <changeSet id="20190916103544-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="etf_product_id"
+                                 baseTableName="redemption"
+                                 constraintName="fk_redemption_etf_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etf_product"/>
+
+        <addForeignKeyConstraint baseColumnNames="dealer_participant_id"
+                                 baseTableName="redemption"
+                                 constraintName="fk_redemption_dealer_participant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dealer_participant"/>
+
+        <addForeignKeyConstraint baseColumnNames="etf_execution_dtl_id"
+                                 baseTableName="redemption"
+                                 constraintName="fk_redemption_etf_execution_dtl_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etf_execution_dtl"/>
+
+    </changeSet>
+</databaseChangeLog>
