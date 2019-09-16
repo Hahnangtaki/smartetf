@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity EtfProduct.
+    -->
+    <changeSet id="20190916064409-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="etf_product_id"
+                                 baseTableName="etf_product_dealer_participant"
+                                 constraintName="fk_etf_product_dealer_participant_etf_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etf_product"/>
+
+        <addForeignKeyConstraint baseColumnNames="dealer_participant_id"
+                                 baseTableName="etf_product_dealer_participant"
+                                 constraintName="fk_etf_product_dealer_participant_dealer_participant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dealer_participant"/>
+        
+        <addForeignKeyConstraint baseColumnNames="mi_id"
+                                 baseTableName="etf_product"
+                                 constraintName="fk_etf_product_mi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mi"/>
+
+        <addForeignKeyConstraint baseColumnNames="bank_custody_id"
+                                 baseTableName="etf_product"
+                                 constraintName="fk_etf_product_bank_custody_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bank_custody"/>
+
+    </changeSet>
+</databaseChangeLog>
