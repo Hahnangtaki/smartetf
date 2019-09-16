@@ -1,0 +1,36 @@
+{
+    "name": "EtfUnderlyingDtl",
+    "fields": [
+        {
+            "fieldName": "stockCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfUnderlying",
+            "otherEntityRelationshipName": "etfUnderlyingDtl",
+            "relationshipName": "etfUnderlying",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190916103541",
+    "entityTableName": "etf_underlying_dtl",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

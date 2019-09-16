@@ -1,0 +1,40 @@
+{
+    "name": "EtfHistory",
+    "fields": [
+        {
+            "fieldName": "valueDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitQty",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "aum",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "etfHistory",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190916103542",
+    "entityTableName": "etf_history",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

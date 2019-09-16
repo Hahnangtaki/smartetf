@@ -1,0 +1,118 @@
+{
+    "name": "Subscript",
+    "fields": [
+        {
+            "fieldName": "subscriptCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "subscriptDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "customerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "unitBuyPriceInd",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitBuyPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitBuyUnit",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitBuyLot",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitBuyBasket",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "market",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "buyGrossAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fee",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "buyNetAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "statusCash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusEtf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "channel",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "subscript",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dealerParticipant",
+            "otherEntityRelationshipName": "subscript",
+            "relationshipName": "dealerParticipant",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfExecutionDtl",
+            "otherEntityRelationshipName": "subscript",
+            "relationshipName": "etfExecutionDtl",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190916103543",
+    "entityTableName": "subscript",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

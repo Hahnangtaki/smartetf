@@ -1,0 +1,41 @@
+{
+    "name": "BankCustody",
+    "fields": [
+        {
+            "fieldName": "custodyCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "unique"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "custodiName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 150
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "bankCustody",
+            "relationshipName": "etfProduct"
+        }
+    ],
+    "changelogDate": "20190916103536",
+    "entityTableName": "bank_custody",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
