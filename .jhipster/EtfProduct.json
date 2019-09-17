@@ -1,0 +1,151 @@
+{
+    "name": "EtfProduct",
+    "fields": [
+        {
+            "fieldName": "productCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "unique"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "productName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "fundCategory",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "inceptionDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "clearingHouse",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "exchage",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "unitCreation",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "unitPriceInitial",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitPriceCurr",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "lotPerBasket",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "indexReff",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "rating",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fee",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "etfUnderlying",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "etfUnderlying"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "etfHistory",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "etfHistory"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subscript",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "subscript"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "redemption",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "redemption"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "portofolio",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "portofolio"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "dealerParticipant",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "dealerParticipant",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "mi",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "mi",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "bankCustody",
+            "otherEntityRelationshipName": "etfProduct",
+            "relationshipName": "bankCustody",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190917045237",
+    "entityTableName": "etf_product",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Portofolio",
+    "fields": [
+        {
+            "fieldName": "customerId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "portofolioDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "avgPrice",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "portofolio",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190917045245",
+    "entityTableName": "portofolio",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

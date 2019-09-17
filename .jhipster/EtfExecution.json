@@ -1,0 +1,54 @@
+{
+    "name": "EtfExecution",
+    "fields": [
+        {
+            "fieldName": "basketOrderId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "stockCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "qty",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "qtyOdd",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "etfExecutionDtl",
+            "otherEntityRelationshipName": "execute",
+            "relationshipName": "executeDtl"
+        }
+    ],
+    "changelogDate": "20190917045243",
+    "entityTableName": "etf_execution",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
