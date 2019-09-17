@@ -1,0 +1,40 @@
+{
+    "name": "EtfExecutionDtl",
+    "fields": [
+        {
+            "fieldName": "transactionType",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subscript",
+            "otherEntityRelationshipName": "etfExecutionDtl",
+            "relationshipName": "subscript"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "redemption",
+            "otherEntityRelationshipName": "etfExecutionDtl",
+            "relationshipName": "redemption"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfExecution",
+            "otherEntityRelationshipName": "executeDtl",
+            "relationshipName": "execute",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190917070400",
+    "entityTableName": "etf_execution_dtl",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
