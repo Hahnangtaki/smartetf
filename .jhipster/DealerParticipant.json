@@ -1,0 +1,55 @@
+{
+    "name": "DealerParticipant",
+    "fields": [
+        {
+            "fieldName": "dealerCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "unique"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "dealerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "redemption",
+            "otherEntityRelationshipName": "dealerParticipant",
+            "relationshipName": "redemption"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subscript",
+            "otherEntityRelationshipName": "dealerParticipant",
+            "relationshipName": "subscript"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "dealerParticipant",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190920074702",
+    "entityTableName": "dealer_participant",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

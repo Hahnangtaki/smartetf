@@ -1,0 +1,38 @@
+{
+    "name": "EtfUnderlying",
+    "fields": [
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "etfUnderlyingDtl",
+            "otherEntityRelationshipName": "etfUnderlying",
+            "relationshipName": "etfUnderlyingDtl"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "etfUnderlying",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190920074704",
+    "entityTableName": "etf_underlying",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

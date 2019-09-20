@@ -14,6 +14,27 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074659_added_entity_GlobalParameter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074700_added_entity_BankCustody.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074701_added_entity_Mi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074702_added_entity_DealerParticipant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074703_added_entity_EtfProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074704_added_entity_EtfUnderlying.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074705_added_entity_EtfUnderlyingDtl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074706_added_entity_EtfHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074707_added_entity_Subscript.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074708_added_entity_Redemption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074709_added_entity_EtfExecution.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074710_added_entity_EtfExecutionDtl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074711_added_entity_Portofolio.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190920074703_added_entity_constraints_EtfProduct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074704_added_entity_constraints_EtfUnderlying.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074705_added_entity_constraints_EtfUnderlyingDtl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074706_added_entity_constraints_EtfHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074707_added_entity_constraints_Subscript.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074708_added_entity_constraints_Redemption.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074710_added_entity_constraints_EtfExecutionDtl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190920074711_added_entity_constraints_Portofolio.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
