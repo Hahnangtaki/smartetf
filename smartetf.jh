@@ -1,0 +1,198 @@
+entity GlobalParameter {
+	prmId String required unique minlength(1) maxlength(20),
+    prmName String required maxlength(50),
+    prmType String required maxlength(1),
+    appType String,
+    intVal Integer,
+    floatVal Float,
+    strVal String,
+    dateVal LocalDate,
+    show Boolean,
+    edit Boolean
+}
+
+entity BankCustody
+{
+    custodyCode String required maxlength(10) unique,
+    custodiName String maxlength(150)
+}
+
+entity Mi
+{
+    miCode String required maxlength(10) unique,
+    miName String maxlength(100)
+}
+
+entity DealerParticipant {
+    dealerCode String required maxlength(10) unique,
+    dealerName String maxlength(100)
+}
+
+entity EtfProduct {
+    productCode String required maxlength(10) unique,
+    productName String  maxlength(50),
+    fundCategory String maxlength(10),
+    inceptionDate LocalDate,
+    clearingHouse String maxlength(10),
+    exchage String maxlength(10),
+    unitCreation Integer min(0),
+    unitPriceInitial Float,
+    unitPriceCurr Float,
+    lotPerBasket Float,
+    indexReff String maxlength(10),
+    rating Float,
+    fee Float
+}
+
+entity EtfUnderlying
+{
+    effectiveDate LocalDate
+    active Boolean
+}
+
+entity EtfUnderlyingDtl
+{
+    stockCode String maxlength(10),
+    weight Float
+}
+
+entity EtfHistory
+{
+    valueDate LocalDate,
+    unitPrice Float,
+    unitQty Float,
+    aum Float
+}
+
+entity Subscript
+{
+    subscriptCode String maxlength(20),
+    subscriptDate LocalDate,
+    customerId String maxlength(20),
+    customerName String maxlength(200),
+    unitBuyPriceInd Float,
+    unitBuyPrice Float,
+    unitBuyUnit Float,
+    unitBuyLot Float,
+    unitBuyBasket Float,
+    market String,
+    buyGrossAmount Float,
+    fee Float,
+    buyNetAmount Float,
+    statusCash String,
+    statusEtf String,
+    status String,
+    channel Integer
+}
+
+entity Redemption
+{
+    redemptionCode String maxlength(20) unique,
+  	redemptionDate LocalDate,
+    customerId String maxlength(20),
+    customerName String maxlength(200),
+    unitSellPriceInd Float,
+    unitSellPrice Float,
+    unitSellUnit Float,
+    unitSellLot Float,
+    unitSellBasket Float,
+    market String,
+    sellGrossAmount Float,
+    fee Float,
+    sellNetAmount Float,
+    statusCash String,
+    statusEtf String
+    status String,
+    channel Integer
+}
+
+entity EtfExecution
+{
+	basketOrderId Integer unique,
+    stockCode String maxlength(10),
+    qty Float,
+    qtyOdd Float,
+    price Float,
+    amount Float
+}
+
+entity EtfExecutionDtl {
+    transactionType String
+}
+
+entity Portofolio {
+	customerId Integer,
+    portofolioDate LocalDate,
+    unit Float,
+    avgPrice Float
+}
+
+relationship ManyToMany {
+	EtfProduct to
+    DealerParticipant
+}
+
+relationship OneToMany {
+	EtfProduct to EtfUnderlying
+}
+
+
+//Relationship Sebenarnya
+relationship OneToMany {
+	EtfUnderlying to EtfUnderlyingDtl
+} 
+
+relationship OneToMany {
+	EtfProduct to EtfHistory
+}
+
+relationship OneToMany {
+	Mi to EtfProduct
+}
+
+relationship OneToMany {
+	BankCustody to EtfProduct
+}
+
+relationship OneToMany {
+	EtfProduct to Subscript
+}
+
+relationship OneToMany {
+	EtfProduct to Redemption
+}
+
+relationship OneToMany {
+	DealerParticipant to Redemption
+}
+
+relationship OneToMany {
+	DealerParticipant to Subscript
+}
+
+relationship OneToMany {
+	EtfExecution to EtfExecutionDtl
+}
+
+relationship OneToMany {
+	EtfExecutionDtl to Subscript
+}
+
+relationship OneToMany {
+	EtfExecutionDtl to Redemption
+}
+
+relationship OneToMany {
+	EtfProduct to Portofolio 
+}
+
+// Set pagination options
+//paginate Nasabah with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix

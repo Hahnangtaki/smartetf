@@ -1,0 +1,119 @@
+{
+    "name": "Redemption",
+    "fields": [
+        {
+            "fieldName": "redemptionCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "unique"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "redemptionDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "customerId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "customerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "unitSellPriceInd",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellUnit",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellLot",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unitSellBasket",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "market",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sellGrossAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fee",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "sellNetAmount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "statusCash",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusEtf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "channel",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfProduct",
+            "otherEntityRelationshipName": "redemption",
+            "relationshipName": "etfProduct",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dealerParticipant",
+            "otherEntityRelationshipName": "redemption",
+            "relationshipName": "dealerParticipant",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "etfExecutionDtl",
+            "otherEntityRelationshipName": "redemption",
+            "relationshipName": "etfExecutionDtl",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190920074708",
+    "entityTableName": "redemption",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
